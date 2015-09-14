@@ -1,0 +1,30 @@
+{
+  "name": "amazon_fba_fee_calculator",
+  "version": "1.0.0",
+  "description": "Calculate Amazon FBA Fees",
+  "main": "index.js",
+  "dependencies": {
+    "config": "^1.16.0",
+    "js-yaml": "^3.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattJGlick/amazon_fba_fee_calculator.git"
+  },
+  "keywords": [
+    "Amazon",
+    "FBA",
+    "Fees",
+    "Selling"
+  ],
+  "author": "Matt Glick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattJGlick/amazon_fba_fee_calculator/issues"
+  },
+  "homepage": "https://github.com/MattJGlick/amazon_fba_fee_calculator"
+}
