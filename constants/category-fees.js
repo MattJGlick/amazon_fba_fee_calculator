@@ -82,3 +82,12 @@ exports.minimumFee = {
   "Watches": 2,
   "Everything Else": 0
 };
+
+exports.variableClosingFee = {
+  "Books": 1.35,
+  "Video & DVD": 1.35,
+  "Music": 1.35,
+  "Software & Computer/Video Games": 1.35,
+  "Video Games": 1.35,
+  "Video Game Consoles": 1.3,
+};
