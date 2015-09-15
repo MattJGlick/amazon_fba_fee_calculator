@@ -11,6 +11,11 @@ exports.calculateFee = function(price, category, weight, dimensions, callback) {
   var size;
   var feeTotal;
 
+  if (config.get("log")) {
+    console.log("---------------");
+    console.log("Calculating Fee");
+  }
+
   feeTotal = calculateReferralFee(price, category);
 
   feeTotal += calculateVariableReferralFee(category);
@@ -89,10 +94,9 @@ function getSize (dimensions, weight, isMedia) {
 
   size = "Small Standard";
 
-
   // does it exceed the max dimensions for small?
   dimensions.forEach(function (dimension, index) {
-    if(dimension < maxSmallStandardDimensions[index]
+    if(dimension > maxSmallStandardDimensions[index]
       || (isMedia && weight > config.get("maxSmallStandardMediaWeight"))
       || (weight > config.get("maxSmallStandardNonMediaWeight"))) {
         size = "Large Standard";
@@ -100,14 +104,12 @@ function getSize (dimensions, weight, isMedia) {
     });
 
   // if its not small, is it large?
-  if(!size) {
-    dimensions.forEach(function (dimension, index) {
-      if(dimension < maxLargeStandardDimensions[index] ||
-        weight > config.get("maxLargeStandardWeight")) {
-        size = "Small Oversize";
-      }
-    });
-  }
+  dimensions.forEach(function (dimension, index) {
+    if(dimension > maxLargeStandardDimensions[index] ||
+      weight > config.get("maxLargeStandardWeight")) {
+      size = "Small Oversize";
+    }
+  });
 
   return size;
 }
@@ -169,6 +171,7 @@ function calculateWeightHandling(size, weight, isMedia) {
 
   if(config.get("log")) {
     console.log("Weight Handling Fee: \t", weightHandlingFee.toFixed(2));
+    console.log("Size: \t\t\t", size);
   }
 
   return weightHandlingFee;
@@ -191,7 +194,7 @@ function calculateThirtyDayStorage(dimensions) {
   }
 
   if(config.get("log")) {
-    console.log("Storage Fee:    \t", storageFee.toFixed(2));
+    console.log("Storage Fee: \t\t", storageFee.toFixed(2));
   }
 
   return storageFee;

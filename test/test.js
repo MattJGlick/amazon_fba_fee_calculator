@@ -47,7 +47,21 @@ describe('Fee Calculator', function() {
       category: "Beauty",
       weight: .02,
       dimensions: [4.8, .9, .8],
-      fee: 4.17}
+      fee: 4.17},
+    {
+      ASIN: "B001BLX9DM",
+      price: 7,
+      category: "Office Products",
+      weight: 1.85,
+      dimensions: [11.9, 4.2, 2.2],
+      fee: 4.71},
+    {
+      ASIN: "B00AB5QISC",
+      price: 6,
+      category: "Industrial & Scientific (including Food Service and Janitorial & Sanitation)",
+      weight: .05,
+      dimensions: [1.5, 1.5, .3],
+      fee: 3.54}
   ];
 
   it('should be valid for all of the items', function () {

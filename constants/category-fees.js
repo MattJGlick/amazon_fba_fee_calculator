@@ -19,7 +19,7 @@ exports.percentageFee = {
   "Health & Personal Care": 15,
   "Home & Garden (including Pet Supplies)": 15,
   "Independent Design": 25,
-  "Industrial & Scientific (including Food Service and Janitorial & Sanitation)": 25,
+  "Industrial & Scientific (including Food Service and Janitorial & Sanitation)": 12,
   "Jewelry": 20,
   "Kitchen": 15,
   "Luggage & Travel Accessories": 15,
