@@ -1,6 +1,6 @@
 inboundShippingPerPound: .50
 
-log: true
+log: false
 
 maxLargeStandardWeight: 20
 maxLargeStandardDimensions:
@@ -11,9 +11,9 @@ maxLargeStandardDimensions:
 maxSmallStandardMediaWeight: 0.875
 maxSmallStandardNonMediaWeight: .75
 maxSmallStandardDimensions:
-  - 18
-  - 14
-  - 8
+  - 15
+  - 12
+  - .75
 
 maxSmallOversizeWeight: 70
 maxSmallOversizeDimensions:

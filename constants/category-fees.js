@@ -89,5 +89,5 @@ exports.variableClosingFee = {
   "Music": 1.35,
   "Software & Computer/Video Games": 1.35,
   "Video Games": 1.35,
-  "Video Game Consoles": 1.3,
+  "Video Game Consoles": 1.35
 };

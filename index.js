@@ -9,7 +9,7 @@ var _ = require('lodash');
 exports.calculateFee = function(price, category, weight, dimensions, callback) {
   var isMedia = false;
   var size;
-  var feeTotal = 0;
+  var feeTotal;
 
   feeTotal = calculateReferralFee(price, category);
 
@@ -87,34 +87,24 @@ function getSize (dimensions, weight, isMedia) {
 
   _.sortBy(dimensions);
 
+  size = "Small Standard";
+
 
   // does it exceed the max dimensions for small?
   dimensions.forEach(function (dimension, index) {
-    if(dimension < maxSmallStandardDimensions[index]) {
-      if((isMedia && weight < config.get("maxSmallStandardMediaWeight")) || (weight < config.get("maxSmallStandardNonMediaWeight"))) {
-        size = "Small Standard";
+    if(dimension < maxSmallStandardDimensions[index]
+      || (isMedia && weight > config.get("maxSmallStandardMediaWeight"))
+      || (weight > config.get("maxSmallStandardNonMediaWeight"))) {
+        size = "Large Standard";
       }
-    }
-  });
+    });
 
   // if its not small, is it large?
   if(!size) {
     dimensions.forEach(function (dimension, index) {
-      if(dimension < maxLargeStandardDimensions[index]) {
-        if(weight < config.get("maxLargeStandardWeight")) {
-          size = "Large Standard";
-        }
-      }
-    });
-  }
-
-  // check for small oversize
-  if(!size) {
-    dimensions.forEach(function (dimension, index) {
-      if(dimension < maxSmallOversizeDimensions[index]) {
-        if(weight < config.get("maxSmallOversizeWeight")) {
-          size = "Small Oversize";
-        }
+      if(dimension < maxLargeStandardDimensions[index] ||
+        weight > config.get("maxLargeStandardWeight")) {
+        size = "Small Oversize";
       }
     });
   }
@@ -168,9 +158,9 @@ function calculateWeightHandling(size, weight, isMedia) {
       }
     } else {
       if(isMedia) {
-        weightHandlingFee = .88 + ((weight - 2) * .41);
+        weightHandlingFee = .88 + (Math.round(weight - 2) * .41);
       } else {
-        weightHandlingFee = 1.59 + ((weight - 2) * .39);
+        weightHandlingFee = 1.59 + (Math.round(weight - 2) * .39);
       }
     }
   } else if (size === "Small Oversize") {
