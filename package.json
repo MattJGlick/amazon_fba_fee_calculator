@@ -9,7 +9,7 @@
     "lodash": "^3.10.1"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "istanbul cover _mocha -- -R spec"
   },
   "repository": {
     "type": "git",

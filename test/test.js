@@ -40,7 +40,14 @@ describe('Fee Calculator', function() {
       category: "Books",
       weight: 16.8,
       dimensions: [9.69, 8.66, 6.69],
-      fee: 18.59}
+      fee: 18.59},
+    {
+      ASIN: "B00J44L7LY",
+      price: 10,
+      category: "Beauty",
+      weight: .02,
+      dimensions: [4.8, .9, .8],
+      fee: 4.17}
   ];
 
   it('should be valid for all of the items', function () {
