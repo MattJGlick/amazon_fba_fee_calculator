@@ -1,6 +1,6 @@
 inboundShippingPerPound: .50
 
-log: true
+logging: true
 
 maxLargeStandardWeight: 20
 maxLargeStandardDimensions:
