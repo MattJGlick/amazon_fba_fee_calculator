@@ -25,7 +25,7 @@ exports.calculateFee = function(price, category, weight, dimensions, callback) {
     isMedia = true;
   }
 
-  size = getSize(dimensions, weight, isMedia);
+  size = getSize(_.sortBy(dimensions).reverse(), weight, isMedia);
 
   feeTotal += calculateOrderHandlingFee(size, isMedia);
 
@@ -89,8 +89,6 @@ function getSize (dimensions, weight, isMedia) {
   var maxLargeStandardDimensions = config.get("maxLargeStandardDimensions");
   var maxSmallStandardDimensions = config.get("maxSmallStandardDimensions");
   var maxSmallOversizeDimensions = config.get("maxSmallOversizeDimensions");
-
-  _.sortBy(dimensions);
 
   size = "Small Standard";
 
