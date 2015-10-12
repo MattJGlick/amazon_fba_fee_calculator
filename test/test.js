@@ -12,7 +12,7 @@ describe('Fee Calculator', function() {
       category: "Health & Personal Care",
       weight: .3,
       dimensions: [6.9, 5.1, 1.2],
-      fee: 4.18},
+      fee: 4.19},
     {
       ASIN: "B007T3Y2SW",
       price: 10,
@@ -33,14 +33,14 @@ describe('Fee Calculator', function() {
       category: "Video Game Consoles",
       weight: 9.7,
       dimensions: [12.1, 11.5, 7.3],
-      fee: 14.85},
+      fee: 14.95},
     {
       ASIN: 1612184146,
       price: 60,
       category: "Books",
       weight: 16.8,
       dimensions: [9.69, 8.66, 6.69],
-      fee: 18.59},
+      fee: 18.64},
     {
       ASIN: "B00J44L7LY",
       price: 10,
@@ -54,13 +54,20 @@ describe('Fee Calculator', function() {
       category: "Office Products",
       weight: 1.85,
       dimensions: [11.9, 4.2, 2.2],
-      fee: 4.71},
+      fee: 4.72},
     {
       ASIN: "B00AB5QISC",
       price: 6,
       category: "Industrial & Scientific (including Food Service and Janitorial & Sanitation)",
       weight: .05,
       dimensions: [1.5, 1.5, .3],
+      fee: 3.54},
+    {
+      ASIN: "B004INFQH2",
+      price: 3.74,
+      category: "Office Products",
+      weight: .05,
+      dimensions: ["0.40", "5.20", "3.10"],
       fee: 3.54}
   ];
 
