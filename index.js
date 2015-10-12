@@ -11,7 +11,7 @@ exports.calculateFee = function(price, category, weight, dimensions, callback) {
   var size;
   var feeTotal;
 
-  if (config.get("log")) {
+  if (config.get("logging")) {
     console.log("---------------");
     console.log("Calculating Fee");
   }
@@ -61,7 +61,7 @@ function calculateReferralFee(price, category) {
     referralFee += price * percentageFee;
   }
 
-  if (config.get("log")) {
+  if (config.get("logging")) {
     console.log("Referral Fee:    \t", referralFee);
   }
 
@@ -76,7 +76,7 @@ function calculateVariableReferralFee (category) {
     variableClosingFee = fees.variableClosingFee[category];
   }
 
-  if(config.get("log")) {
+  if(config.get("logging")) {
     console.log("Variable Closing Fee: \t", variableClosingFee);
   }
 
@@ -121,7 +121,7 @@ function calculateOrderHandlingFee(size, isMedia) {
     orderHandlingFee = 1;
   }
 
-  if(config.get("log")) {
+  if(config.get("logging")) {
     console.log("Order Handling Fee: \t", orderHandlingFee);
   }
 
@@ -137,7 +137,7 @@ function calculatePickAndPackFee(size) {
     pickAndPackFee = 4.05;
   }
 
-  if(config.get("log")) {
+  if(config.get("logging")) {
     console.log("Pick and Pack Fee: \t", pickAndPackFee);
   }
 
@@ -169,7 +169,7 @@ function calculateWeightHandling(size, weight, isMedia) {
     weightHandlingFee = 1.59 + ((weight - 2) * .39);
   }
 
-  if(config.get("log")) {
+  if(config.get("logging")) {
     console.log("Weight Handling Fee: \t", weightHandlingFee.toFixed(2));
     console.log("Size: \t\t\t", size);
   }
@@ -193,7 +193,7 @@ function calculateThirtyDayStorage(dimensions) {
     storageFee = (.68 * cubicFeet);
   }
 
-  if(config.get("log")) {
+  if(config.get("logging")) {
     console.log("Storage Fee: \t\t", storageFee.toFixed(2));
   }
 
