@@ -1,6 +1,6 @@
 inboundShippingPerPound: .50
 
-logging: true
+feeLogging: true
 
 maxLargeStandardWeight: 20
 maxLargeStandardDimensions:
