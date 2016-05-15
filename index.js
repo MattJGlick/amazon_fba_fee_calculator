@@ -191,9 +191,9 @@ function calculateThirtyDayStorage(dimensions) {
   var cubicFeet = (dimensions[0] / 12) * (dimensions[1] / 12) * (dimensions[2] / 12);
 
   if (currentMonth > 0 && currentMonth < 9) {
-    storageFee = (.51 * cubicFeet);
+    storageFee = (.54 * cubicFeet);
   } else {
-    storageFee = (.68 * cubicFeet);
+    storageFee = (.72 * cubicFeet);
   }
 
   if(config.get("feeLogging")) {
