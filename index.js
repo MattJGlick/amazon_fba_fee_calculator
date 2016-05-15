@@ -149,21 +149,26 @@ function calculateWeightHandling(size, weight, isMedia) {
     weightHandlingFee = .50
   } else if (size === "Large Standard") {
     if(weight < 1) {
-      weightHandlingFee = .63;
+      if(isMedia) {
+        weightHandlingFee = .85;
+      } else {
+        weightHandlingFee = .96;
+      }
     } else if (weight < 2) {
       if(isMedia) {
-        weightHandlingFee = .88;
+        weightHandlingFee = 1.24;
       } else {
-        weightHandlingFee = 1.59;
+        weightHandlingFee = 1.95;
       }
     } else {
       if(isMedia) {
-        weightHandlingFee = .88 + (Math.round(weight - 2) * .41);
+        weightHandlingFee = 1.24 + (Math.round(weight - 2) * .41);
       } else {
-        weightHandlingFee = 1.59 + (Math.round(weight - 2) * .39);
+        weightHandlingFee = 1.95 + (Math.round(weight - 2) * .39);
       }
     }
   } else if (size === "Small Oversize") {
+    // needs lots of work for oversize items
     weightHandlingFee = 1.59 + ((weight - 2) * .39);
   }
 
