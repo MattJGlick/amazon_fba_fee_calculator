@@ -130,9 +130,9 @@ function calculatePickAndPackFee(size) {
   var pickAndPackFee = 0;
 
   if(size === "Small Standard" || size === "Large Standard") {
-    pickAndPackFee = 1.04;
+    pickAndPackFee = 1.06;
   } else if(size === "Small Oversize") {
-    pickAndPackFee = 4.05;
+    pickAndPackFee = 4.09;
   }
 
   if(config.get("feeLogging")) {
